@@ -1,0 +1,110 @@
+* {
+    margin: 0;
+    padding: 0;
+    outline: none;
+    /* border: none; */
+    text-decoration: none;
+    list-style: none;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+:root {font-size: 10px}
+
+html, body {
+    overflow-x: hidden;
+}
+
+/* MAIN setup */
+main {
+    width: 100vw;
+    min-height: 100vh;
+}
+
+/* setting up HEADER */
+header {
+    width: 100vw;
+    min-height: 25vh;
+    background-color: #e9edf8;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    overflow-y: hidden;
+}
+
+h1, .btn {
+    margin: 0.1rem 0;
+}
+
+header h1 {
+    font-size: 7rem;
+    font-family: Rubik Wet Paint, serif;
+    color: #202021;
+}
+
+.btn {
+    font-size: 2rem;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    line-height: 5rem;
+    padding: 0 2rem;
+    background-color: #202021;
+    color: #f8f5fa;
+    transition: all 0.7s;
+    border: 0.2rem solid #f8f5fa;
+    border-radius: 1rem;
+    cursor: pointer;
+}
+
+.btn:hover {
+    color: #202021;
+    background-color: #f8f5fa;
+    border-color: #202021;
+}
+
+/* ASIDE */
+aside {
+    width: 100vw;
+    height: 100vh;
+    background-color: #04040e;
+    position: absolute;
+    bottom: 100vh;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all 0.8s;
+}
+
+form {
+    width: 80vw;
+    height: 50vh;
+    text-align: center;
+    color: #fff;
+    font-family: sans-serif;
+    font-size: 8rem;
+}
+
+#totitle, #desc {
+    font-size: 7rem;
+    padding: 0.5rem;
+    border-radius: 1rem;
+    border: 0;
+    margin: 0.5rem auto;
+}
+
+.form-btn-container {
+    display: flex;justify-content: center;
+}
+
+.form-btn-container .btn {
+    margin: 0 0.3rem;
+}
+
+.red {
+    background-color: red;
+}
+
+.red:hover {
+    color: red;
+}
