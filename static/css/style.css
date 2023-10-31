@@ -1,0 +1,6 @@
+/* MAIN setup */
+.body{width: 100vw;min-height: 100vh;}
+.header{width: 100vw;max-height: 25vh;padding: 0.2rem 0;background-color: #e9edf8;display: flex;flex-direction: column;align-items: center;justify-content: center;overflow-y: hidden;}
+.header a{font-size: 4rem;font-family: Rubik Wet Paint, serif;color: #202021;text-decoration: none;padding: 0;}
+
+#aside{width: 100vw;height: 100vh;background-color: #000;position: absolute;bottom: 100vh;left: 0;transition: all 0.8s;overflow: hidden!important;}
