@@ -1,4 +1,4 @@
-from flask import Flask, render_template, request
+from flask import Flask, redirect, render_template, request
 from Database import Database
 
 app = Flask(__name__)
@@ -8,23 +8,42 @@ db = Database()
 def home():
     # POST request handling
     if request.method == 'POST':
-        print("#"*100)
         ttitle = request.form["ttitle"]
         tdesc = request.form["tdesc"]
-        print(ttitle)
-        print(tdesc)
-        db.insertor(ttitle, tdesc)
+        db.creater(ttitle, tdesc)
 
     # extracting all todos from db
-    data = db.fetcher()
+    Todos = db.reader()
     return render_template(
         'index.html', 
-        Todos = data
+        Todos = Todos
     )
+
+@app.route('/update/<int:tid>', methods=['GET', 'POST'])
+def update(tid):
+    if request.method == "POST":
+        ttitle = request.form["ttitle"]
+        tdesc = request.form["tdesc"]
+        db.updater(tid, ttitle, tdesc)
+        return redirect("/")
+
+    data = db.reader()
+    Todos = None
+    for d in data:
+        if d['tid'] == tid:
+            Todos = d
+
+    return render_template("update.html", Todos=Todos)
 
 @app.route('/delete/<int:tid>')
 def delete(tid):
-    return str(tid)
+    db.deleter(tid)
+    return redirect("/")
+
+@app.route('/deleteAll')
+def deleteAll():
+    db.deleter("all")
+    return redirect("/")
 
 if __name__ == "__main__":
-    app.run(debug=True)
+    app.run()

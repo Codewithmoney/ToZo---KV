@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Update | ToZo</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+</head>
+
+<body>
+    <h1 class="text-center">Update Your Todo</h1>
+    <div class="container my-5">
+        <form action="/update/{{ Todos.tid }}" method="POST">
+            <div class="mb-3">
+                <label for="ttitle" class="form-label">Title</label>
+                <input type="text" name="ttitle" class="form-control" id="ttitle" placeholder="Title"
+                    value="{{ Todos.ttitle }}">
+            </div>
+            <div class="mb-3">
+                <label for="tdesc" class="form-label">Description</label>
+                <textarea name="tdesc" class="form-control" id="tdesc" rows="3">{{ Todos.tdesc }}</textarea>
+            </div>
+            <button type="submit" class="btn btn-success">Update</button>
+            <a href="/" class="btn btn-danger">Cancel</a>
+        </form>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
